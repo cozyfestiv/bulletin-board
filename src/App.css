@@ -53,6 +53,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #bfbfbf;
 }
 
 .card {
@@ -66,7 +67,7 @@
   font-size: 2rem;
   background-color: #96939b;
   color: white;
-  padding: 0.5rem 1rem;
+  padding: 1rem 2rem;
   border-bottom: 1px black;
 }
 
@@ -78,7 +79,23 @@
   border: none;
   padding: 0.3rem 0.5rem;
   color: white;
-  background-color: cornflowerblue;
+  background-color: #fc814a;
   border-radius: 0.3em;
   margin: 0.3rem;
+}
+
+.btn-complete {
+  background-color: #2e933c;
+}
+
+.btn-delete {
+  background-color: rgb(175, 30, 30);
+}
+
+.btn-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  border-top: 1px solid #564256;
+  padding: 0.5rem 1rem;
 }

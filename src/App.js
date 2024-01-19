@@ -1,5 +1,6 @@
 import './App.css'
 import { Cards } from './Cards'
+import '@fortawesome/fontawesome-free/css/all.min.css'
 
 function App () {
   return (
