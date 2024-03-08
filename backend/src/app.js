@@ -14,7 +14,7 @@ const errorHandler = require('./errors/errorHandler')
 app.use(cors())
 app.use(express.json())
 
-app.use('/list', cardsRouter)
+app.use('/posts', cardsRouter)
 app.use(notFound)
 app.use(errorHandler)
 

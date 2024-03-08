@@ -1,4 +1,27 @@
+import React, { useState, useCallback, useEffect } from "react";
+import { listCards } from "./utils/api";
+
 export function Cards() {
+  const [cards, setCards] = useState([]);
+  console.log(cards);
+
+  const loadCards = useCallback(async () => {
+    const abortController = new AbortController();
+
+    try {
+      const response = await listCards(abortController.signal);
+      setCards(response);
+    } catch (error) {
+      console.error(error);
+    } finally {
+      abortController.abort();
+    }
+  }, []);
+
+  useEffect(() => {
+    loadCards();
+  }, []);
+
   return (
     <>
       <div className="card-wrapper">
