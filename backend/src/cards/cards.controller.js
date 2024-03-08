@@ -1,11 +1,11 @@
-const service = require("./cards.service");
+const service = require('./cards.service')
+const asyncErrorBoundary = require('../errors/asyncErrorBoundary')
 
-
-async function list(req, res) {
-  const data = await service.list();
-  res.json({ data });
+async function list (req, res) {
+  const data = await service.list()
+  res.json({ data })
 }
 
 module.exports = {
-  list,
+  list: asyncErrorBoundary(list)
 }

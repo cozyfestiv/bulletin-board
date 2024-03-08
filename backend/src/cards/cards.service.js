@@ -1,12 +1,9 @@
-const knex = require("../db/connection");
+const knex = require('../db/connection')
 
-function list() {
-  return knex("cards")
-    .select("*")
-    .orderBy("card_id")
+function list () {
+  return knex('cards').select('*')
 }
 
-
 module.exports = {
-  list,
+  list
 }
