@@ -1,4 +1,6 @@
-const API_BASE_URL = process.env.DATABASE_URL || 'http://localhost:5001'
+const API_BASE_URL = 'http://localhost:5001'
+
+// process.env.REACT_APP_DATABASE_URL_DEVELOPMENT ||
 
 const headers = new Headers()
 headers.append('Content-Type', 'application/json')

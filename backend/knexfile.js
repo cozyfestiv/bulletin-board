@@ -5,7 +5,7 @@ module.exports = {
   development: {
     client: 'postgresql',
     pool: { min: 1, max: 2 },
-    connection: process.env.REACT_APP_DATABASE_URL,
+    connection: process.env.DATABASE_URL,
     migrations: {
       directory: path.join(__dirname, 'src', 'db', 'migrations')
     },
@@ -16,7 +16,7 @@ module.exports = {
   production: {
     client: 'postgresql',
     pool: { min: 1, max: 2 },
-    connection: process.env.REACT_APP_DATABASE_URL_PRODUCTION,
+    connection: process.env.DATABASE_URL_PRODUCTION,
     migrations: {
       directory: path.join(__dirname, 'src', 'db', 'migrations')
     },
