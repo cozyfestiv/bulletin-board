@@ -3,7 +3,9 @@ import { TicketForm } from '../Components/TicketForm'
 
 export const CreateTicket = ({}) => {
   return (
-    <TicketForm />
+    <>
+        <TicketForm />
+    </>
   );
 };
 
