@@ -38,7 +38,7 @@ async function fetchJson (url, options, onCancel) {
 }
 
 export async function listCards (signal) {
-  const url = `${API_BASE_URL}/posts`
+  const url = `${API_BASE_URL}/tickets`
 
   return await fetchJson(url, { headers, signal }, [])
 }

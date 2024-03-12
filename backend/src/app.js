@@ -7,14 +7,14 @@ const cors = require('cors')
 
 const app = express()
 
-const cardsRouter = require('./cards/cards.router')
+const ticketsRouter = require('./tickets/tickets.router')
 const notFound = require('./errors/notFound')
 const errorHandler = require('./errors/errorHandler')
 
 app.use(cors())
 app.use(express.json())
 
-app.use('/posts', cardsRouter)
+app.use('/tickets', ticketsRouter)
 app.use(notFound)
 app.use(errorHandler)
 

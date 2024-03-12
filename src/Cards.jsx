@@ -33,14 +33,14 @@ export function Cards() {
     <>
       <div className="card-wrapper">
         {cards.map((card) => (
-          <div className="card" key={card.card_id}>
-            <div className="card-title">{card.card_name}</div>
+          <div className="card" key={card.ticket_id}>
+            <div className="card-title">{card.ticket_name}</div>
             <div className="card-body">
               <div className="card-body-category">
                 Created By: {card.created_by}
               </div>
               <div className="card-body-category">
-                Date Created: {formatDate(card.card_date)}
+                Date Created: {formatDate(card.ticket_date)}
               </div>
               <div className="card-body-category">
                 Due Date: {formatDate(card.due_date)}
