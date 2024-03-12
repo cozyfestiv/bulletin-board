@@ -4,10 +4,14 @@ function list () {
   return knex('tickets').select('*')
 }
 
-// function create (newTicketData) {
-//   return knex("tickets")
-// }
+function create (newTicketData) {
+  return knex("tickets")
+    .insert(newTicketData)
+    .returning("*")
+    .then(createdRecords => createdRecords[0])
+}
 
 module.exports = {
-  list
+  list,
+  create
 }

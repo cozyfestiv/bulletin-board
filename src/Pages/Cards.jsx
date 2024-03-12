@@ -1,5 +1,5 @@
 import React, { useState, useCallback, useEffect } from "react";
-import { listCards } from "./utils/api";
+import { listCards } from "../utils/api";
 
 export function Cards() {
   const [cards, setCards] = useState([]);

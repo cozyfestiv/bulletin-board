@@ -42,3 +42,16 @@ export async function listCards (signal) {
 
   return await fetchJson(url, { headers, signal }, [])
 }
+
+export async function createTicket (ticket, signal) {
+  const url = `${API_BASE_URL}/tickets`
+
+  const options = {
+    method: "POST",
+    headers,
+    body: JSON.stringify({data: ticket}),
+    signal,
+  }
+  
+  return await fetchJson(url, options)
+}

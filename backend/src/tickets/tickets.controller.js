@@ -6,6 +6,17 @@ async function list (req, res) {
   res.json({ data })
 }
 
+async function create (req, res) {
+  try {
+    const data = await service.create(req.body.data)
+    res.status(201).json({ data })
+  } catch (error) {
+    console.error(error)
+    res.status(500).json({ error: "Error Creating Ticket!"})
+  }
+}
+
 module.exports = {
-  list: asyncErrorBoundary(list)
+  list: asyncErrorBoundary(list),
+  create: asyncErrorBoundary(create)
 }
