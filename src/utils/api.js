@@ -1,4 +1,4 @@
-const API_BASE_URL = process.env.DATABASE_URL
+const API_BASE_URL = process.env.DATABASE_URL || 'http://localhost:5001'
 
 const headers = new Headers()
 headers.append('Content-Type', 'application/json')
@@ -9,6 +9,13 @@ async function fetchJson (url, options, onCancel) {
 
     if (response.status === 204) {
       return null
+    }
+
+    const contentType = response.headers.get('content-type')
+    if (!contentType || !contentType.includes('application/json')) {
+      // Handle non-JSON response
+      console.error('Non-JSON response:', await response.text())
+      throw new Error('Response is not in JSON format')
     }
 
     const payload = await response.json()
@@ -29,7 +36,7 @@ async function fetchJson (url, options, onCancel) {
 }
 
 export async function listCards (signal) {
-  const url = `${API_BASE_URL}/cards`
+  const url = `${API_BASE_URL}/posts`
 
   return await fetchJson(url, { headers, signal }, [])
 }
