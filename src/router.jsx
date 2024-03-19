@@ -1,6 +1,6 @@
 import { Navigate, createBrowserRouter, useRouteError } from "react-router-dom";
 import Layout from "./layout/Layout";
-import { Cards } from "./Cards";
+import { Cards } from "./Pages/Cards";
 
 export const router = createBrowserRouter([
   {

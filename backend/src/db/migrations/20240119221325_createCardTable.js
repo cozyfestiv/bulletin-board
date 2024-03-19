@@ -3,15 +3,15 @@
  * @returns { Promise<void> }
  */
 exports.up = function (knex) {
-  return knex.schema.createTable('cards', card => {
-    card.increments('card_id').primary()
-    card.string('card_name')
-    card.string('created_by')
-    card.date('card_date')
-    card.date('due_date')
-    card.string('status').defaultTo('active')
-    card.enu('type', ['feature request', 'bug', 're-design', 'other'])
-    card.text('description')
+  return knex.schema.createTable('tickets', table => {
+    table.increments('ticket_id').primary()
+    table.string('ticket_name')
+    table.string('created_by')
+    table.date('ticket_date')
+    table.date('due_date')
+    table.string('status').defaultTo('active')
+    table.enu('type', ['feature request', 'bug', 're-design', 'other'])
+    table.text('description')
   })
 }
 
@@ -20,5 +20,5 @@ exports.up = function (knex) {
  * @returns { Promise<void> }
  */
 exports.down = function (knex) {
-  return knex.schema.dropTable('cards')
+  return knex.schema.dropTable('tickets')
 }
